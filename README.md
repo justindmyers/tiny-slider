@@ -1,4 +1,7 @@
 # tiny-slider 2.0
+
+Fork of Tiny Slider to fix a specific bug that can't be recreated
+
 ![version](https://img.shields.io/badge/Version-2.2.4-green.svg)  
 Tiny slider for all purposes, inspired by [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/).   
 [Demos](http://ganlanyuan.github.io/tiny-slider/tests/index.html)   

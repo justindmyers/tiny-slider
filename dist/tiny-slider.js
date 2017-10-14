@@ -2367,7 +2367,7 @@ var tns = function(options) {
               x += disX;
               x += 'px';
             } else {
-              var percentageX = TRANSFORM ? disX * items * 100 / (vpInner * slideCountNew): disX * 100 / vpInner;
+              var percentageX = TRANSFORM ? disX * items * 100 / (innerWrapper.clientWidth * slideCountNew) : disX * 100 / innerWrapper.clientWidth;
               x += percentageX;
               x += '%';
             }
