@@ -2026,7 +2026,7 @@ export var tns = function(options) {
         startX = startY = null;
 
         if (horizontal) {
-          var indexMoved = - disX * items / vpInner;
+          var indexMoved = - disX * items / innerWrapper.clientWidth;
           indexMoved = disX > 0 ? Math.floor(indexMoved) : Math.ceil(indexMoved);
           index += indexMoved;
         } else {
