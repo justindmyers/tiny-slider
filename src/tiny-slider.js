@@ -2007,6 +2007,16 @@ export var tns = function(options) {
     if (!running) {
       e = e || win.event;
 
+      // Prevent a normal mouse click from causing the carousel to drag
+      if (!isTouchEvent(e)) {
+        disX = parseInt(e.clientX) - startX;
+        disY = parseInt(e.clientY) - startY;
+
+        if (getTouchDirection(toDegree(disY, disX), 15) === options.axis && !disX) {
+            startX = startY = null;
+        }
+      }
+
       if (touchedOrDraged) {
         touchedOrDraged = false;
         var ev;
@@ -2026,7 +2036,7 @@ export var tns = function(options) {
         startX = startY = null;
 
         if (horizontal) {
-          var indexMoved = - disX * items / vpInner;
+          var indexMoved = - disX * items / innerWrapper.clientWidth;
           indexMoved = disX > 0 ? Math.floor(indexMoved) : Math.ceil(indexMoved);
           index += indexMoved;
         } else {
